@@ -23,10 +23,5 @@ include(Catch)
 
 catch_discover_tests(tests)
 
-add_executable(
-	shapes
-
-)
-
 
 
