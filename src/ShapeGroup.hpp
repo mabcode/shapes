@@ -1,6 +1,7 @@
 #pragma once
+#include "Image.hpp"
 
-class ShapeGroup {
+class ShapeGroup: public Image {
     private:
 
     public:

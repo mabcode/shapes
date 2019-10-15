@@ -2,7 +2,7 @@
 
 void Image::add(Image *img){}
 void Image::remove(Image *img){}
-Image* Image::getImage(int getImg){}
+Image* Image::getImage(int getImg){return new Image;}
 void Image::moveX(Image *img){}
 void Image::moveY(Image *img){}
 void Image::computeArea(Image *img){}

@@ -28,8 +28,12 @@ add_executable(
 	Main.cpp
 	Image.hpp
 	Image.cpp
-	Shape.hpp
-	Shape.cpp
+	Point.hpp
+	Point.cpp
+	Line.hpp
+	Line.cpp
+	Circle.hpp
+	Circle.cpp
 	ShapeGroup.hpp
 	ShapeGroup.cpp
 	)
