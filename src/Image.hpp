@@ -11,7 +11,7 @@ class Image {
         virtual void moveY(Image *img);
         virtual void computeArea(Image *img);
         virtual void scale(Image *img);
-        virtual void draw (void);
+        virtual void draw ();
         
         
 };
