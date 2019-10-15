@@ -23,5 +23,15 @@ include(Catch)
 
 catch_discover_tests(tests)
 
+add_executable(
+	shapes 
+	Main.cpp
+	Image.hpp
+	Image.cpp
+	Shape.hpp
+	Shape.cpp
+	ShapeGroup.hpp
+	ShapeGroup.cpp
+	)
 
 
