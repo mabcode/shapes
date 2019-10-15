@@ -1,10 +1,56 @@
 #include <catch2/catch.hpp>
 
+#include "../ShapeGroup.cpp"
+#include "../Image.cpp"
+#include "../Point.cpp"
+#include "../Line.cpp"
 
-TEST_CASE("Checking that valid drone commands", "[MessageCenter]")
+TEST_CASE("Checking that you can have a group of point", "[pointGroup]")
 {
-    SECTION("Checking validate()")
+    SECTION("Checking 2 group of points")
     {
+        Image* pointGroup1 = new ShapeGroup("point group 1");
+        Image* pointGroup2 = new ShapeGroup("point group 2");
 
+        Image* allPointGroups = new ShapeGroup("allPoints");
+
+        allPointGroups->add(pointGroup1);
+        pointGroup1->add(new Point(1,2));
+        pointGroup1->add(new Point(1,2));
+        pointGroup1->add(new Point(3,3));
+        
+        allPointGroups->add(pointGroup2);
+        pointGroup2->add(new Point(3,3));
+        pointGroup2->add(new Point(4,3));
+        pointGroup2->add(new Point(5,3));
+
+        allPointGroups->draw();
     }
+
+    SECTION("Checking 2 group of points and lines")
+    {
+        Image* pointGroup1 = new ShapeGroup("point and Line group 1");
+        Image* pointGroup2 = new ShapeGroup("point and Line group 2");
+
+        Image* allPointGroups = new ShapeGroup("allPoints");
+
+        allPointGroups->add(pointGroup1);
+        pointGroup1->add(new Point(1,2));
+        pointGroup1->add(new Point(1,2));
+        pointGroup1->add(new Point(3,3));
+        pointGroup1->add(new Line(6,6,12,12));
+        pointGroup1->add(new Line(0,1,23,44));
+        
+        allPointGroups->add(pointGroup2);
+        pointGroup2->add(new Point(3,3));
+        pointGroup2->add(new Point(4,3));
+        pointGroup2->add(new Point(5,3));
+        pointGroup2->add(new Line(1,1,2,2));
+        pointGroup2->add(new Line(2,2,3,3));
+
+        allPointGroups->draw();
+    }
+    
+
+    
 }
