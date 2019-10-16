@@ -1,10 +1,15 @@
 #pragma once
 #include "Image.hpp"
 
+#include <iostream>
 
-class Circle : public Image{
-    private:
-    
-    public:
+class Circle : public Image
+{
+  private:
+    int x, y;
+    double rad;
 
+  public:
+    Circle(int x, int y, double rad);
+    void draw(void);
 };

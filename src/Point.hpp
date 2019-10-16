@@ -2,7 +2,6 @@
 #include "Image.hpp"
 #include <iostream>
 
-
 class Point : public Image
 {
   private:
@@ -10,5 +9,5 @@ class Point : public Image
 
   public:
     Point(int x, int y);
-    void draw (void);
+    void draw(void);
 };

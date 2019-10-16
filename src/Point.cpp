@@ -8,5 +8,5 @@ Point::Point(int x, int y)
 
 void Point::draw()
 {
-    std::cout<<"Point X : "<<x<<" Point Y :"<<y<<std::endl; 
+    std::cout << "Point X : " << x << " Point Y :" << y << std::endl;
 }
