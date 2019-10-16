@@ -14,7 +14,7 @@ find_package(Catch2 REQUIRED)
 add_executable(
 	tests 
 	tests/tester.cpp
-	tests/PointTest.cpp
+	tests/CompositeTest.cpp
 	)
 
 target_link_libraries(tests Catch2::Catch2)
