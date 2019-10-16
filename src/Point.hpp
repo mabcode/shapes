@@ -10,4 +10,5 @@ class Point : public Image
   public:
     Point(int x, int y);
     void draw(void);
+    void move(int x, int y);
 };

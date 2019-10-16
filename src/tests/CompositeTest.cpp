@@ -26,6 +26,10 @@ TEST_CASE("Checking that you can have a group of point", "[composite]")
         pointGroup2->add(new Point(5, 3));
 
         allPointGroups->draw();
+        allPointGroups->move(10,10);
+        std::cout << std::endl;
+        std::cout << "POINTS AFTER BEING MOVED \n";
+        allPointGroups->draw();
         std::cout << std::endl;
     }
 

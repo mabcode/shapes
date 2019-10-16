@@ -14,6 +14,7 @@ class ShapeGroup: public Image {
         void remove(Image* img);
         Image* getImage(int imgIndex);
         void draw (void);
+        void move (int x, int y);
         ShapeGroup(std::string name);
         std::string getName(void);
 

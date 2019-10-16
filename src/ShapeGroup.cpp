@@ -29,6 +29,14 @@ void ShapeGroup::draw(void)
     }
 }
 
+void ShapeGroup::move(int x, int y)
+{
+    for (auto &iter : this->imgPieces)
+    {
+        iter->move(x, y);
+    }
+}
+
 std::string ShapeGroup::getName(void){
     return imgName;
 }
