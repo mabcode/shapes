@@ -55,6 +55,10 @@ TEST_CASE("Checking that you can have a group of point", "[composite]")
         pointGroup2->add(new Line(2, 2, 3, 3));
 
         allPointGroups->draw();
+        allPointGroups->move(100,100);
+        std::cout << std::endl;
+        std::cout << "POINTS AFTER BEING MOVED \n";
+        allPointGroups->draw();
         std::cout << std::endl;
     }
 
@@ -84,7 +88,10 @@ TEST_CASE("Checking that you can have a group of point", "[composite]")
         pointGroup2->add(new Circle(2, 2, 3));
 
         allPointGroups->draw();
-
+        allPointGroups->move(1000,1000);
+        std::cout << std::endl;
+        std::cout << "POINTS AFTER BEING MOVED \n";
+        allPointGroups->draw();
         std::cout << std::endl;
     }
 }

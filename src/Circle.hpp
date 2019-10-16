@@ -12,4 +12,5 @@ class Circle : public Image
   public:
     Circle(int x, int y, double rad);
     void draw(void);
+    void move(int x, int y);
 };
