@@ -13,8 +13,9 @@ class ShapeGroup: public Image {
         void add(Image* img);
         void remove(Image* img);
         Image* getImage(int imgIndex);
-        void draw (void);
-        void move (int x, int y);
+        void draw(void);
+        void move(int x, int y);
+        void scale(double scaleBy);
         ShapeGroup(std::string name);
         std::string getName(void);
 

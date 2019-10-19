@@ -19,3 +19,8 @@ void Line::move(int x, int y)
     this->y1 += y;
     this->y2 += y;
 }
+
+void Line::scale(double scaleBy)
+{
+    this->x2 *= scaleBy;
+}

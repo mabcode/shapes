@@ -11,4 +11,6 @@ class Point : public Image
     Point(int x, int y);
     void draw(void);
     void move(int x, int y);
+    void scale(double scaleBy);
+    
 };

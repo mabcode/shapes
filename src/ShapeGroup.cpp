@@ -37,6 +37,14 @@ void ShapeGroup::move(int x, int y)
     }
 }
 
+void ShapeGroup::scale(double scaleBy)
+{
+    for (auto &iter : this->imgPieces)
+    {
+        iter->scale(scaleBy);
+    }
+}
+
 std::string ShapeGroup::getName(void){
     return imgName;
 }
