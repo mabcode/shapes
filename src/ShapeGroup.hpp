@@ -5,6 +5,10 @@
 
 #include <vector>
 
+#include "Point.hpp"
+#include "Line.hpp"
+#include "Circle.hpp"
+
 
 class ShapeGroup : public Image
 {

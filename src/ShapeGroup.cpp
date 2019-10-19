@@ -69,13 +69,38 @@ void ShapeGroup::fileOut(std::ofstream &out)
     }
     out.close();
 }
-void ShapeGroup::fileIn(std::ifstream& in)
+void ShapeGroup::fileIn(std::ifstream &in)
 {
-
+    std::string tempClass;
     in.open(imgName);
+
+    int x, y, x2, y2;
+    double rad;
+
+    while (!in.eof())
+    {
+        in >> tempClass;
+        if (tempClass == "Point")
+        {
+            in >> x >> y;
+            imgPieces.push_back(new Point(x, y));
+        }
+        else if (tempClass == "Line")
+        {
+            in >> x >> y >> x2 >> y2;
+            imgPieces.push_back(new Line(x,y,x2,y2));
+        }
+        else if (tempClass == "Circle")
+        {   
+            in >> x >> y >>rad;
+            imgPieces.push_back(new Circle(x,y,rad));
+        }
+    }
 
     for (auto &iter : this->imgPieces)
     {
+        in >> tempClass;
+
         iter->fileIn(in);
     }
     in.close();
