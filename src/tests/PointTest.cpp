@@ -3,6 +3,8 @@
 #include "../ShapeGroup.cpp"
 #include "../Image.cpp"
 #include "../Point.cpp"
+#include <fstream>
+#include <sstream>
 
 TEST_CASE("Checking the methods in the point class", "[point]")
 {
@@ -40,5 +42,41 @@ TEST_CASE("Checking the methods in the point class", "[point]")
 
         delete point;
     }
-    
+    SECTION("Checking the fileOut() and fileIn()")
+    {
+        std::string tempClass;
+        Point *point = new Point(2,3);
+        Point *point3 = new Point(5,5);
+        std::ofstream out;
+        out.open("testPoint.txt");
+        point->fileOut(out);
+        point3->fileOut(out);
+        
+        Point *point2 = new Point(0,0);
+        Point *point4 = new Point(0,0);
+        
+        CHECK(point2->getx() == 0);
+        CHECK(point2->gety() == 0);
+        CHECK(point4->getx() == 0);
+        CHECK(point4->gety() == 0);
+
+        std::ifstream in;
+        in.open("testPoint.txt");
+        in >> tempClass;
+        CHECK(tempClass == "Point");
+        point2->fileIn(in);
+        in >> tempClass;
+        CHECK(tempClass == "Point");
+        point4->fileIn(in);
+
+        CHECK(point2->getx() == 2);
+        CHECK(point2->gety() == 3);
+        CHECK(point4->getx() == 5);
+        CHECK(point4->gety() == 5);
+
+        delete point;
+        delete point2;
+        delete point3;
+        delete point4;
+    }
 }
