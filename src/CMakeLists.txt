@@ -15,6 +15,9 @@ add_executable(
 	tests 
 	tests/tester.cpp
 	tests/CompositeTest.cpp
+	tests/PointTest.cpp
+	tests/LineTest.cpp
+	tests/CircleTest.cpp
 	)
 
 target_link_libraries(tests Catch2::Catch2)

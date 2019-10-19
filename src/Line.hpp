@@ -13,5 +13,9 @@ public:
   void draw(void);
   void move(int x, int y);
   void scale(double scaleBy);
-  
+  double area(void);
+  int getx1(void);
+  int getx2(void);
+  int gety1(void);
+  int gety2(void);
 };

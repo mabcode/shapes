@@ -24,3 +24,25 @@ void Line::scale(double scaleBy)
 {
     this->x2 *= scaleBy;
 }
+
+double Line::area(void)
+{
+    return 0;
+}
+
+int Line::getx1(void)
+{
+    return this->x1;
+}
+int Line::getx2(void)
+{
+    return this->x2;
+}
+int Line::gety1(void)
+{
+    return this->y1;
+}
+int Line::gety2(void)
+{
+    return this->y2;
+}

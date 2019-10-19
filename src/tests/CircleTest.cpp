@@ -1,9 +1,15 @@
 #include <catch2/catch.hpp>
 
-TEST_CASE("Checking that valid drone commands", "[MessageCenter]")
-{
-    SECTION("Checking validate()")
-    {
+#include "../Circle.cpp"
 
+TEST_CASE("Checking the methods in the circle class", "[circle]")
+{
+    SECTION("Checking the constructor")
+    {
+        Circle *cir = new Circle(3,5,33);
+        CHECK(cir->getx() == 3);
+        CHECK(cir->gety() == 5);
+        CHECK(cir->getRad() == 33);
+        delete cir;
     }
 }

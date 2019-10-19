@@ -22,3 +22,21 @@ void Circle::scale(double scaleBy)
 {
     this->rad *= scaleBy;
 }
+
+double Circle::area(void)
+{
+    return (PI * (rad * rad));
+}
+
+int Circle::getx(void)
+{
+    return this-> x;
+}
+int Circle::gety(void)
+{
+    return this-> y;
+}
+double Circle::getRad(void)
+{
+    return this-> rad;
+}

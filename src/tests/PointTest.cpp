@@ -1,8 +1,17 @@
 #include <catch2/catch.hpp>
 
-TEST_CASE("Checking that you can have a group of point", "[pointGroup]")
+#include "../ShapeGroup.cpp"
+#include "../Image.cpp"
+#include "../Point.cpp"
+
+TEST_CASE("Checking the methods in the point class", "[point]")
 {
-    SECTION("Checking 2 group of points")
+    SECTION("Checking the constructor")
     {
+        Point *point = new Point(5,9);
+        REQUIRE(point->getx() == 5);
+        REQUIRE(point->gety() == 9);
+        delete point;
     }
+    
 }

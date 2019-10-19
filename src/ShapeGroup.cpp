@@ -1,7 +1,8 @@
 #include "ShapeGroup.hpp"
 
-ShapeGroup::ShapeGroup(std::string name){
-    this->imgName=name;
+ShapeGroup::ShapeGroup(std::string name)
+{
+    this->imgName = name;
 }
 
 void ShapeGroup::add(Image *img)
@@ -21,7 +22,7 @@ Image *ShapeGroup::getImage(int imgIndex)
 
 void ShapeGroup::draw(void)
 {
-    std::cout<<getName()<<std::endl;
+    std::cout << getName() << std::endl;
 
     for (auto &iter : this->imgPieces)
     {
@@ -45,6 +46,19 @@ void ShapeGroup::scale(double scaleBy)
     }
 }
 
-std::string ShapeGroup::getName(void){
+double ShapeGroup::area(void)
+{
+    double tempArea = 0;
+
+    for (auto &iter : this->imgPieces)
+    {
+        tempArea += iter->area();
+    }
+
+    return tempArea;
+}
+
+std::string ShapeGroup::getName(void)
+{
     return imgName;
 }
