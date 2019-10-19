@@ -89,6 +89,17 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         CHECK(line4->getx2() == 8);
         CHECK(line4->gety2() == 8);
 
+        CHECK(line->getx1() == line2->getx1());
+        CHECK(line->gety1() == line2->gety1());
+        CHECK(line->getx2() == line2->getx2());
+        CHECK(line->gety2() == line2->gety2());
+
+        CHECK(line3->getx1() == line4->getx1());
+        CHECK(line3->gety1() == line4->gety1());
+        CHECK(line3->getx2() == line4->getx2());
+        CHECK(line3->gety2() == line4->gety2());
+
+
         delete line;
         delete line2;
         delete line3;

@@ -73,6 +73,11 @@ TEST_CASE("Checking the methods in the point class", "[point]")
         CHECK(point4->getx() == 5);
         CHECK(point4->gety() == 5);
 
+        CHECK(point->getx() == point2->getx());
+        CHECK(point->gety() == point2->gety());
+        CHECK(point3->getx() == point4->getx());
+        CHECK(point3->gety() == point4->gety());
+
         delete point;
         delete point2;
         delete point3;
