@@ -12,4 +12,13 @@ TEST_CASE("Checking the methods in the circle class", "[circle]")
         CHECK(cir->getRad() == 33);
         delete cir;
     }
+    SECTION("Checking the move()")
+    {
+        Circle *cir = new Circle(3,5,33);
+        cir->move(10,10);
+        CHECK(cir->getx() == 13);
+        CHECK(cir->gety() == 15);
+        CHECK(cir->getRad() == 33);
+        delete cir;
+    }
 }

@@ -13,5 +13,15 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         CHECK(line->gety2() == 51);
         delete line;
     }
+    SECTION("Checking the move()")
+    {
+        Line *line = new Line(5,9,12,51);
+        line->move(100,100);
+        CHECK(line->getx1() == 105);
+        CHECK(line->gety1() == 109);
+        CHECK(line->getx2() == 112);
+        CHECK(line->gety2() == 151);
+        delete line;
+    }
     
 }
