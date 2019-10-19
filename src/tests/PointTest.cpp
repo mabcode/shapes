@@ -21,5 +21,13 @@ TEST_CASE("Checking the methods in the point class", "[point]")
         REQUIRE(point->gety() == 19);
         delete point;
     }
+    SECTION("Checking the scale()")
+    {
+        Point *point = new Point(2,2);
+        point->scale(10);
+        REQUIRE(point->getx() == 2);
+        REQUIRE(point->gety() == 2);
+        delete point;
+    }
     
 }

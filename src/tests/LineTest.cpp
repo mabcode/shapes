@@ -23,5 +23,15 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         CHECK(line->gety2() == 151);
         delete line;
     }
+    SECTION("Checking the scale()")
+    {
+        Line *line = new Line(5,9,50,60);
+        line->scale(2);
+        CHECK(line->getx1() == 5);
+        CHECK(line->gety1() == 9);
+        CHECK(line->getx2() == 100);
+        CHECK(line->gety2() == 60);
+        delete line;
+    }
     
 }

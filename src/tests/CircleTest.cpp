@@ -21,4 +21,13 @@ TEST_CASE("Checking the methods in the circle class", "[circle]")
         CHECK(cir->getRad() == 33);
         delete cir;
     }
+    SECTION("Checking the scale()")
+    {
+        Circle *cir = new Circle(3,5,10);
+        cir->scale(10);
+        CHECK(cir->getx() == 3);
+        CHECK(cir->gety() == 5);
+        CHECK(cir->getRad() == 100);
+        delete cir;
+    }
 }
