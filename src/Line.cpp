@@ -30,6 +30,16 @@ double Line::area(void)
     return 0;
 }
 
+void Line::fileOut(std::ofstream &out)
+{
+    out << "Line " << this->x1 << " " << this->y1 << " " << this->x2 << " " << this->y2 << std::endl;
+}
+
+void Line::fileIn(std::ifstream &in)
+{
+    in >> this->x1 >> this->y1 >> this->x2 >> this->y2;
+}
+
 int Line::getx1(void)
 {
     return this->x1;

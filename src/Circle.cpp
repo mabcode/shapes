@@ -28,15 +28,25 @@ double Circle::area(void)
     return (PI * (rad * rad));
 }
 
+void Circle::fileOut(std::ofstream &out)
+{
+    out << "Circle " << this->x << " " << this->y << " " << this->rad << std::endl;
+}
+
+void Circle::fileIn(std::ifstream &in)
+{
+    in >> this->x >>this->y >>this->rad;
+}
+
 int Circle::getx(void)
 {
-    return this-> x;
+    return this->x;
 }
 int Circle::gety(void)
 {
-    return this-> y;
+    return this->y;
 }
 double Circle::getRad(void)
 {
-    return this-> rad;
+    return this->rad;
 }

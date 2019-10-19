@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include <fstream>
 
 class Image {
     private:
@@ -13,7 +13,7 @@ class Image {
         virtual void scale(double scaleBy);
         virtual double area();
         virtual void draw();
-        // virtual void fileOut(std::string fout);
-        // virtual void fileIn(std::string fin);
+        virtual void fileOut(std::ofstream& out);
+        virtual void fileIn(std::ifstream& in);
         
 };

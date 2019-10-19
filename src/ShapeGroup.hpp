@@ -1,9 +1,10 @@
 #pragma once
 #include "Image.hpp"
-#include <string>
 #include <iostream>
+#include <fstream>
 
 #include <vector>
+
 
 class ShapeGroup : public Image
 {
@@ -20,5 +21,7 @@ class ShapeGroup : public Image
     void move(int x, int y);
     void scale(double scaleBy);
     double area(void);
+    void fileOut(std::ofstream& out);
+    void fileIn(std::ifstream& in);
     std::string getName(void);
 };

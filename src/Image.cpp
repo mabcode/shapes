@@ -8,5 +8,5 @@ void Image::computeArea(Image *img) {}
 void Image::scale(double scaleBy) {}
 double Image::area() {return 0;}
 void Image::draw() {}
-// void fileOut(std::string fout){}
-// void fileIn(std::string fin){}
+void Image::fileOut(std::ofstream& out){}
+void Image::fileIn(std::ifstream& in){}

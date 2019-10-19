@@ -58,6 +58,29 @@ double ShapeGroup::area(void)
     return tempArea;
 }
 
+void ShapeGroup::fileOut(std::ofstream &out)
+{
+
+    out.open(imgName);
+
+    for (auto &iter : this->imgPieces)
+    {
+        iter->fileOut(out);
+    }
+    out.close();
+}
+void ShapeGroup::fileIn(std::ifstream& in)
+{
+
+    in.open(imgName);
+
+    for (auto &iter : this->imgPieces)
+    {
+        iter->fileIn(in);
+    }
+    in.close();
+}
+
 std::string ShapeGroup::getName(void)
 {
     return imgName;
