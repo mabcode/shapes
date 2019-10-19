@@ -30,4 +30,15 @@ TEST_CASE("Checking the methods in the circle class", "[circle]")
         CHECK(cir->getRad() == 100);
         delete cir;
     }
+    SECTION("Checking the area()")
+    {
+        Circle *cir = new Circle(3,5,10);
+        double tempArea = -1;
+        tempArea = cir->area();
+        CHECK(cir->getx() == 3);
+        CHECK(cir->gety() == 5);
+        CHECK(cir->getRad() == 10);
+        CHECK(tempArea == (3.14159265359*(10*10)));
+        delete cir;
+    }
 }

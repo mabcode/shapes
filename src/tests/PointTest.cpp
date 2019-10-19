@@ -29,5 +29,16 @@ TEST_CASE("Checking the methods in the point class", "[point]")
         REQUIRE(point->gety() == 2);
         delete point;
     }
+    SECTION("Checking the area()")
+    {
+        Point *point = new Point(2,2);
+        double tempArea = -1;
+        tempArea = point->area();
+        REQUIRE(point->getx() == 2);
+        REQUIRE(point->gety() == 2);
+        REQUIRE(tempArea == 0);
+
+        delete point;
+    }
     
 }

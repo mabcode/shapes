@@ -33,5 +33,17 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         CHECK(line->gety2() == 60);
         delete line;
     }
+    SECTION("Checking the area()")
+    {
+        Line *line = new Line(5,9,50,60);
+        double tempArea = -1;
+        tempArea = line->area();
+        CHECK(line->getx1() == 5);
+        CHECK(line->gety1() == 9);
+        CHECK(line->getx2() == 50);
+        CHECK(line->gety2() == 60);
+        CHECK(tempArea == 0);
+        delete line;
+    }
     
 }
