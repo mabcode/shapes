@@ -1,6 +1,7 @@
 #include <catch2/catch.hpp>
 
 #include "../Circle.cpp"
+#include <fstream>
 
 TEST_CASE("Checking the methods in the circle class", "[circle]")
 {
