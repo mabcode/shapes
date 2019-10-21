@@ -14,10 +14,12 @@ find_package(Catch2 REQUIRED)
 add_executable(
 	tests 
 	tests/tester.cpp
-	tests/CompositeTest.cpp
+	tests/ShapeGroupTest.cpp
 	tests/PointTest.cpp
 	tests/LineTest.cpp
 	tests/CircleTest.cpp
+	tests/RectangleTest.cpp
+	tests/TriangleTest.cpp
 	)
 
 target_link_libraries(tests Catch2::Catch2)
@@ -38,6 +40,10 @@ add_executable(
 	Line.cpp
 	Circle.hpp
 	Circle.cpp
+	Triangle.hpp
+	Triangle.cpp
+	Rectangle.hpp
+	Rectangle.cpp
 	ShapeGroup.hpp
 	ShapeGroup.cpp
 	)
