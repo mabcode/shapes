@@ -26,9 +26,16 @@ void Triangle::move(int x, int y)
 
 void Triangle::scale(double scaleBy)
 {
-    //could get more accurate
-    this->x2 *= scaleBy;
-    this->y3 *= scaleBy;
+    double centerX = (x1+x2+x3)/3;
+    double centerY = (y1+y2+y3)/3;
+
+    this->x1 = (scaleBy*this->x1 - centerX);
+    this->y1 = (scaleBy*this->y1 - centerY);
+    this->x2 = (scaleBy*this->x2 - centerX);
+    this->y2 = (scaleBy*this->y2 - centerY);
+    this->x3 = (scaleBy*this->x3 - centerX);
+    this->y3 = (scaleBy*this->y3 - centerY);
+
 }
 
 double Triangle::area(void)
