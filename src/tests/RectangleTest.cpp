@@ -3,106 +3,115 @@
 #include "../Rectangle.cpp"
 #include <fstream>
 
-// TEST_CASE("Checking the methods in the Line class", "[line]")
-// {
-//     SECTION("Checking the constructor")
-//     {
-//         Line *line = new Line(5, 9, 12, 51);
-//         CHECK(line->getx1() == 5);
-//         CHECK(line->gety1() == 9);
-//         CHECK(line->getx2() == 12);
-//         CHECK(line->gety2() == 51);
-//         delete line;
-//     }
-//     SECTION("Checking the move()")
-//     {
-//         Line *line = new Line(5, 9, 12, 51);
-//         line->move(100, 100);
-//         CHECK(line->getx1() == 105);
-//         CHECK(line->gety1() == 109);
-//         CHECK(line->getx2() == 112);
-//         CHECK(line->gety2() == 151);
-//         delete line;
-//     }
-//     SECTION("Checking the scale()")
-//     {
-//         Line *line = new Line(5, 9, 50, 60);
-//         line->scale(2);
-//         CHECK(line->getx1() == 5);
-//         CHECK(line->gety1() == 9);
-//         CHECK(line->getx2() == 100);
-//         CHECK(line->gety2() == 60);
-//         delete line;
-//     }
-//     SECTION("Checking the area()")
-//     {
-//         Line *line = new Line(5, 9, 50, 60);
-//         double tempArea = -1;
-//         tempArea = line->area();
-//         CHECK(line->getx1() == 5);
-//         CHECK(line->gety1() == 9);
-//         CHECK(line->getx2() == 50);
-//         CHECK(line->gety2() == 60);
-//         CHECK(tempArea == 0);
-//         delete line;
-//     }
+TEST_CASE("Checking the methods in the Rectangle class", "[rectangle]")
+{
+    SECTION("Checking the constructor")
+    {
+        Rectangle *rec = new Rectangle(5, 0, 12, 0, 10);
+        CHECK(rec->getx1() == 5);
+        CHECK(rec->gety1() == 0);
+        CHECK(rec->getx2() == 12);
+        CHECK(rec->gety2() == 0);
+        CHECK(rec->getHeight() == 10);
+        delete rec;
+    }
+    SECTION("Checking the move()")
+    {
+        Rectangle *rec = new Rectangle(5, 0, 12, 0, 10);
+        rec->move(100, 100);
+        CHECK(rec->getx1() == 105);
+        CHECK(rec->gety1() == 100);
+        CHECK(rec->getx2() == 112);
+        CHECK(rec->gety2() == 100);
+        CHECK(rec->getHeight() == 10);
+        delete rec;
+    }
+    SECTION("Checking the scale()")
+    {
+        Rectangle *rec = new Rectangle(5, 0, 12, 0, 10);
+        rec->scale(2);
+        CHECK(rec->getx1() == 5);
+        CHECK(rec->gety1() == 0);
+        CHECK(rec->getx2() == 24);
+        CHECK(rec->gety2() == 0);
+        CHECK(rec->getHeight() == 20);
+        delete rec;
+    }
+    SECTION("Checking the area()")
+    {
+        Rectangle *rec = new Rectangle(5, 0, 12, 0, 10);
+        double tempArea = -1;
+        tempArea = rec->area();
+        CHECK(rec->getx1() == 5);
+        CHECK(rec->gety1() == 0);
+        CHECK(rec->getx2() == 12);
+        CHECK(rec->gety2() == 0);
+        CHECK(rec->getHeight() == 10);
+        CHECK(tempArea == (12-5)*10);
+        delete rec;
+    }
 
-//     SECTION("Checking the fileOut() and fileIn()")
-//     {
-//         std::string tempClass;
-//         Line *line = new Line(2, 2, 4, 4);
-//         Line *line3 = new Line(6, 6, 8, 8);
-//         std::ofstream out;
-//         out.open("testPoint.txt");
-//         line->fileOut(out);
-//         line3->fileOut(out);
+    SECTION("Checking the fileOut() and fileIn()")
+    {
+        std::string tempClass;
+        Rectangle *rec = new Rectangle(2, 2, 4, 4, 10);
+        Rectangle *rec3 = new Rectangle(6, 6, 8, 8, 10);
+        std::ofstream out;
+        out.open("testPoint.txt");
+        rec->fileOut(out);
+        rec3->fileOut(out);
 
-//         Line *line2 = new Line(-1, -2, -3, -4);
-//         Line *line4 = new Line(-5, -6, -7, -8);
+        Rectangle *rec2 = new Rectangle(-1, -2, -3, -4, -99);
+        Rectangle *rec4 = new Rectangle(-5, -6, -7, -8, -88);
 
-//         CHECK(line2->getx1() == -1);
-//         CHECK(line2->gety1() == -2);
-//         CHECK(line2->getx2() == -3);
-//         CHECK(line2->gety2() == -4);
+        CHECK(rec2->getx1() == -1);
+        CHECK(rec2->gety1() == -2);
+        CHECK(rec2->getx2() == -3);
+        CHECK(rec2->gety2() == -4);
+        CHECK(rec2->getHeight() == -99);
 
-//         CHECK(line4->getx1() == -5);
-//         CHECK(line4->gety1() == -6);
-//         CHECK(line4->getx2() == -7);
-//         CHECK(line4->gety2() == -8);
+        CHECK(rec4->getx1() == -5);
+        CHECK(rec4->gety1() == -6);
+        CHECK(rec4->getx2() == -7);
+        CHECK(rec4->gety2() == -8);
+        CHECK(rec4->getHeight() == -88);
 
-//         std::ifstream in;
-//         in.open("testPoint.txt");
-//         in >> tempClass;
-//         CHECK(tempClass == "Line");
-//         line2->fileIn(in);
-//         in >> tempClass;
-//         CHECK(tempClass == "Line");
-//         line4->fileIn(in);
+        std::ifstream in;
+        in.open("testPoint.txt");
+        in >> tempClass;
+        CHECK(tempClass == "Rectangle");
+        rec2->fileIn(in);
+        in >> tempClass;
+        CHECK(tempClass == "Rectangle");
+        rec4->fileIn(in);
 
-//         CHECK(line2->getx1() == 2);
-//         CHECK(line2->gety1() == 2);
-//         CHECK(line2->getx2() == 4);
-//         CHECK(line2->gety2() == 4);
+        CHECK(rec2->getx1() == 2);
+        CHECK(rec2->gety1() == 2);
+        CHECK(rec2->getx2() == 4);
+        CHECK(rec2->gety2() == 4);
+        CHECK(rec2->getHeight() == 10);
 
-//         CHECK(line4->getx1() == 6);
-//         CHECK(line4->gety1() == 6);
-//         CHECK(line4->getx2() == 8);
-//         CHECK(line4->gety2() == 8);
+        CHECK(rec4->getx1() == 6);
+        CHECK(rec4->gety1() == 6);
+        CHECK(rec4->getx2() == 8);
+        CHECK(rec4->gety2() == 8);
+        CHECK(rec4->getHeight() == 10);
 
-//         CHECK(line->getx1() == line2->getx1());
-//         CHECK(line->gety1() == line2->gety1());
-//         CHECK(line->getx2() == line2->getx2());
-//         CHECK(line->gety2() == line2->gety2());
+        CHECK(rec->getx1() == rec2->getx1());
+        CHECK(rec->gety1() == rec2->gety1());
+        CHECK(rec->getx2() == rec2->getx2());
+        CHECK(rec->gety2() == rec2->gety2());
+        CHECK(rec->getHeight() == rec2->getHeight());
+        
+        CHECK(rec3->getx1() == rec4->getx1());
+        CHECK(rec3->gety1() == rec4->gety1());
+        CHECK(rec3->getx2() == rec4->getx2());
+        CHECK(rec3->gety2() == rec4->gety2());
+        CHECK(rec3->getHeight() == rec4->getHeight());
 
-//         CHECK(line3->getx1() == line4->getx1());
-//         CHECK(line3->gety1() == line4->gety1());
-//         CHECK(line3->getx2() == line4->getx2());
-//         CHECK(line3->gety2() == line4->gety2());
-
-
-//         delete line;
-//         delete line2;
-//         delete line3;
-//         delete line4;
-//     }
-// }
+        delete rec;
+        delete rec2;
+        delete rec3;
+        delete rec4;
+    }
+}

@@ -3,7 +3,7 @@
 #include "../Triangle.cpp"
 #include <fstream>
 
-TEST_CASE("Checking the methods in the Triangle class", "[line]")
+TEST_CASE("Checking the methods in the Triangle class", "[triangle]")
 {
     SECTION("Checking the constructor")
     {
