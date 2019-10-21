@@ -10,7 +10,7 @@ Rectangle::Rectangle(int x1, int y1, int x2, int y2, double height)
 }
 void Rectangle::draw(void)
 {
-    std::cout << "Line from: X1:" << x1 << " Y1:" << y1 << "  TO  X2:" << x2 << " Y2:" << y2 << " Height:" << height<< std::endl;
+    std::cout << "Rectangle from: X1:" << x1 << " Y1:" << y1 << "  TO  X2:" << x2 << " Y2:" << y2 << " Height:" << height<< std::endl;
 }
 
 void Rectangle::move(int x, int y)
@@ -35,7 +35,7 @@ double Rectangle::area(void)
 
 void Rectangle::fileOut(std::ofstream &out)
 {
-    out << "Line " << this->x1 << " " << this->y1 << " " << this->x2 << " " << this->y2 <<" " << this->height << std::endl;
+    out << "Rectangle " << this->x1 << " " << this->y1 << " " << this->x2 << " " << this->y2 <<" " << this->height << std::endl;
 }
 
 void Rectangle::fileIn(std::ifstream &in)
