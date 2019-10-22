@@ -64,7 +64,6 @@ void ShapeGroup::fileOut(std::ofstream &out)
     {
         iter->fileOut(out);
     }
-    out.close();
 }
 void ShapeGroup::fileIn(std::ifstream &in)
 {
@@ -103,13 +102,6 @@ void ShapeGroup::fileIn(std::ifstream &in)
         }
     }
 
-    for (auto &iter : this->imgPieces)
-    {
-        in >> tempClass;
-
-        iter->fileIn(in);
-    }
-    in.close();
 }
 
 std::string ShapeGroup::getName(void)
