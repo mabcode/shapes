@@ -105,4 +105,10 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         delete line3;
         delete line4;
     }
+    SECTION("Checking the draw()")
+    {
+        Line *line = new Line(5, 9, 12, 51);
+        line->draw();
+        delete line;
+    }
 }

@@ -48,4 +48,8 @@ add_executable(
 	ShapeGroup.cpp
 	)
 
+find_package(OpenGL REQUIRED)
+include_directories( ${OPENGL_INCLUDE_DIRS}  )
+
+target_link_libraries(shapes ${OPENGL_LIBRARIES} )
 
