@@ -60,9 +60,6 @@ double ShapeGroup::area(void)
 
 void ShapeGroup::fileOut(std::ofstream &out)
 {
-
-    out.open(imgName);
-
     for (auto &iter : this->imgPieces)
     {
         iter->fileOut(out);
@@ -72,9 +69,8 @@ void ShapeGroup::fileOut(std::ofstream &out)
 void ShapeGroup::fileIn(std::ifstream &in)
 {
     std::string tempClass;
-    in.open(imgName);
 
-    int x, y, x2, y2;
+    int x, y, x2, y2, x3, y3, height;
     double rad;
 
     while (!in.eof())
@@ -88,12 +84,22 @@ void ShapeGroup::fileIn(std::ifstream &in)
         else if (tempClass == "Line")
         {
             in >> x >> y >> x2 >> y2;
-            imgPieces.push_back(new Line(x,y,x2,y2));
+            imgPieces.push_back(new Line(x, y, x2, y2));
         }
         else if (tempClass == "Circle")
-        {   
-            in >> x >> y >>rad;
-            imgPieces.push_back(new Circle(x,y,rad));
+        {
+            in >> x >> y >> rad;
+            imgPieces.push_back(new Circle(x, y, rad));
+        }
+        else if (tempClass == "Triangle")
+        {
+            in >> x >> y >> x2 >> y2 >> x3 >> y3;
+            imgPieces.push_back(new Triangle(x, y, x2, y2, x3, y3));
+        }
+        else if (tempClass == "Rectangle")
+        {
+            in >> x >> y >> x2 >> y2 >> height;
+            imgPieces.push_back(new Rectangle(x, y, x2, y2, height));
         }
     }
 

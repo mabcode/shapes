@@ -1,7 +1,6 @@
 #include <catch2/catch.hpp>
 
-#include "../ShapeGroup.cpp"
-#include "../Image.cpp"
+
 #include "../Point.cpp"
 #include <fstream>
 

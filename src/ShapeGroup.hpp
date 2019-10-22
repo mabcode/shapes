@@ -8,6 +8,8 @@
 #include "Point.hpp"
 #include "Line.hpp"
 #include "Circle.hpp"
+#include "Rectangle.hpp"
+#include "Triangle.hpp"
 
 
 class ShapeGroup : public Image
