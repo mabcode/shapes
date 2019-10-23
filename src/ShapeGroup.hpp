@@ -22,7 +22,7 @@ class ShapeGroup : public Image
   public:
     ShapeGroup(std::string name);
     void add(Image *img);
-    void remove(Image *img);
+    void remove(int imgIndex);
     Image *getImage(int imgIndex);
     void draw(void);
     void move(int x, int y);

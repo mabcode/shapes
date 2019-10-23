@@ -10,9 +10,9 @@ void ShapeGroup::add(Image *img)
     imgPieces.push_back(img);
 }
 
-void ShapeGroup::remove(Image *img)
+void ShapeGroup::remove(int imgIndex)
 {
-    //find image in vector and remove it
+    imgPieces.erase(imgPieces.begin()+(imgIndex-1));
 }
 
 Image *ShapeGroup::getImage(int imgIndex)
