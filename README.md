@@ -9,7 +9,8 @@ Build Project:
         ====>>>In order compile this file you will need istall or have "Cmake" and "Catch2" <<<===
 
 ~Run
-
+To run the code type "./tests" inside the build folder;
+ 
 
 Notes:
 To spend the least amount of time in Cmake on this assignment I have included a Main.cpp becuse errors are thrown if it is not there while you build. There is a way around this, but do not plan to resolve this probelem as it is not essental for the project to work correctly.

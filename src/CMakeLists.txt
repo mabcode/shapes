@@ -48,6 +48,9 @@ add_executable(
 	ShapeGroup.cpp
 	)
 
+
+# All code below this line is for the OPENGL
+
 find_package(OpenGL REQUIRED)
 
 
