@@ -59,6 +59,15 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
         CHECK(temp1->gety() == 12);
         CHECK(temp2->getx() == 14);
         CHECK(temp2->gety() == 15);
+        CHECK(temp3->getx() == 16);
+        CHECK(temp3->gety() == 17);
+
+        CHECK(pointGroup->getSize() == 3);
+
+        pointGroup->remove(2);
+
+        CHECK(pointGroup->getSize() == 2);
+    
 
         auto temp4 = static_cast<Line *>(lineGroup->getImage(0));
         auto temp5 = static_cast<Line *>(lineGroup->getImage(1));

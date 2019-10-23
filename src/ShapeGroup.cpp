@@ -108,3 +108,7 @@ std::string ShapeGroup::getName(void)
 {
     return imgName;
 }
+
+int ShapeGroup::getSize(void){
+    return imgPieces.size();
+}

@@ -31,4 +31,5 @@ class ShapeGroup : public Image
     void fileOut(std::ofstream& out);
     void fileIn(std::ifstream& in);
     std::string getName(void);
+    int getSize(void);
 };
