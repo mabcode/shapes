@@ -44,12 +44,12 @@ double Triangle::area(void)
     return (((x2 - x1) * tempHeight) / 2);
 }
 
-void Triangle::fileOut(std::ofstream &out)
+void Triangle::writeToFile(std::ofstream &out)
 {
     out << "Triangle " << this->x1 << " " << this->y1 << " " << this->x2 << " " << this->y2 << " " << this->x3 << " " << this->y3 << std::endl;
 }
 
-void Triangle::fileIn(std::ifstream &in)
+void Triangle::readFromFile(std::ifstream &in)
 {
     in >> this->x1 >> this->y1 >> this->x2 >> this->y2 >> this->x3 >> this->y3;
 }

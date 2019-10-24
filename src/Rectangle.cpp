@@ -33,12 +33,12 @@ double Rectangle::area(void)
     return (this->height*tempWidth);
 }
 
-void Rectangle::fileOut(std::ofstream &out)
+void Rectangle::writeToFile(std::ofstream &out)
 {
     out << "Rectangle " << this->x1 << " " << this->y1 << " " << this->x2 << " " << this->y2 <<" " << this->height << std::endl;
 }
 
-void Rectangle::fileIn(std::ifstream &in)
+void Rectangle::readFromFile(std::ifstream &in)
 {
     in >> this->x1 >> this->y1 >> this->x2 >> this->y2 >> this->height;
 }

@@ -17,19 +17,11 @@ void Point::move(int x, int y)
     this->y += y;
 }
 
-void Point::scale(double scaleBy)
-{
-}
-
-double Point::area(void)
-{
-    return 0;
-}
-void Point::fileOut(std::ofstream &out)
+void Point::writeToFile(std::ofstream &out)
 {
     out << "Point " << this->x << " " << this->y << std::endl;
 }
-void Point::fileIn(std::ifstream &in)
+void Point::readFromFile(std::ifstream &in)
 {
     in >> this->x >> this->y;
 }

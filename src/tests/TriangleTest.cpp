@@ -84,8 +84,8 @@ TEST_CASE("Checking the methods in the Triangle class", "[triangle]")
         Triangle *tri3 = new Triangle(16, 10, 22, 10, 19, 19);
         std::ofstream out;
         out.open("testPoint.txt");
-        tri->fileOut(out);
-        tri3->fileOut(out);
+        tri->writeToFile(out);
+        tri3->writeToFile(out);
 
         Triangle *tri2 = new Triangle(-1, -2, -3, -4, -5, -6);
         Triangle *tri4 = new Triangle(-7, -8, -9, -10, -11, -12);
@@ -108,10 +108,10 @@ TEST_CASE("Checking the methods in the Triangle class", "[triangle]")
         in.open("testPoint.txt");
         in >> tempClass;
         CHECK(tempClass == "Triangle");
-        tri2->fileIn(in);
+        tri2->readFromFile(in);
         in >> tempClass;
         CHECK(tempClass == "Triangle");
-        tri4->fileIn(in);
+        tri4->readFromFile(in);
 
         CHECK(tri2->getx1() == 6);
         CHECK(tri2->gety1() == 0);

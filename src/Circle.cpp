@@ -28,12 +28,12 @@ double Circle::area(void)
     return (PI * (rad * rad));
 }
 
-void Circle::fileOut(std::ofstream &out)
+void Circle::writeToFile(std::ofstream &out)
 {
     out << "Circle " << this->x << " " << this->y << " " << this->rad << std::endl;
 }
 
-void Circle::fileIn(std::ifstream &in)
+void Circle::readFromFile(std::ifstream &in)
 {
     in >> this->x >>this->y >>this->rad;
 }

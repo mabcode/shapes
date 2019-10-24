@@ -58,8 +58,8 @@ TEST_CASE("Checking the methods in the Rectangle class", "[rectangle]")
         Rectangle *rec3 = new Rectangle(6, 6, 8, 8, 10);
         std::ofstream out;
         out.open("testPoint.txt");
-        rec->fileOut(out);
-        rec3->fileOut(out);
+        rec->writeToFile(out);
+        rec3->writeToFile(out);
 
         Rectangle *rec2 = new Rectangle(-1, -2, -3, -4, -99);
         Rectangle *rec4 = new Rectangle(-5, -6, -7, -8, -88);
@@ -80,10 +80,10 @@ TEST_CASE("Checking the methods in the Rectangle class", "[rectangle]")
         in.open("testPoint.txt");
         in >> tempClass;
         CHECK(tempClass == "Rectangle");
-        rec2->fileIn(in);
+        rec2->readFromFile(in);
         in >> tempClass;
         CHECK(tempClass == "Rectangle");
-        rec4->fileIn(in);
+        rec4->readFromFile(in);
 
         CHECK(rec2->getx1() == 2);
         CHECK(rec2->gety1() == 2);

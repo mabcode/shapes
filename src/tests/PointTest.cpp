@@ -47,8 +47,8 @@ TEST_CASE("Checking the methods in the point class", "[point]")
         Point *point3 = new Point(5, 5);
         std::ofstream out;
         out.open("testPoint.txt");
-        point->fileOut(out);
-        point3->fileOut(out);
+        point->writeToFile(out);
+        point3->writeToFile(out);
 
         Point *point2 = new Point(0, 0);
         Point *point4 = new Point(0, 0);
@@ -62,10 +62,10 @@ TEST_CASE("Checking the methods in the point class", "[point]")
         in.open("testPoint.txt");
         in >> tempClass;
         CHECK(tempClass == "Point");
-        point2->fileIn(in);
+        point2->readFromFile(in);
         in >> tempClass;
         CHECK(tempClass == "Point");
-        point4->fileIn(in);
+        point4->readFromFile(in);
 
         CHECK(point2->getx() == 2);
         CHECK(point2->gety() == 3);

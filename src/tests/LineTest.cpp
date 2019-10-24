@@ -54,8 +54,8 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         Line *line3 = new Line(6, 6, 8, 8);
         std::ofstream out;
         out.open("testPoint.txt");
-        line->fileOut(out);
-        line3->fileOut(out);
+        line->writeToFile(out);
+        line3->writeToFile(out);
 
         Line *line2 = new Line(-1, -2, -3, -4);
         Line *line4 = new Line(-5, -6, -7, -8);
@@ -74,10 +74,10 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
         in.open("testPoint.txt");
         in >> tempClass;
         CHECK(tempClass == "Line");
-        line2->fileIn(in);
+        line2->readFromFile(in);
         in >> tempClass;
         CHECK(tempClass == "Line");
-        line4->fileIn(in);
+        line4->readFromFile(in);
 
         CHECK(line2->getx1() == 2);
         CHECK(line2->gety1() == 2);
@@ -107,7 +107,7 @@ TEST_CASE("Checking the methods in the Line class", "[line]")
     }
     SECTION("Checking the draw()")
     {
-        Line *line = new Line(5, 9, 12, 51);
+        Line *line = new Line(50, 10, 200, 200);
         line->draw();
         delete line;
     }

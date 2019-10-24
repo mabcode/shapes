@@ -1,8 +1,8 @@
 #pragma once
-#include "Image.hpp"
+#include "Shape.hpp"
 #include <iostream>
 
-class Point : public Image
+class Point : public Shape
 {
 private:
   int x, y;
@@ -11,10 +11,8 @@ public:
   Point(int x, int y);
   void draw(void);
   void move(int x, int y);
-  void scale(double scaleBy);
-  double area(void);
-  void fileOut(std::ofstream& out);
-  void fileIn(std::ifstream& in);
+  void writeToFile(std::ofstream& out);
+  void readFromFile(std::ifstream& in);
   int getx(void);
   int gety(void);
 };

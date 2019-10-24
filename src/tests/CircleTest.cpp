@@ -49,8 +49,8 @@ TEST_CASE("Checking the methods in the circle class", "[circle]")
         Circle *cir3 = new Circle(5, 5, 100);
         std::ofstream out;
         out.open("testPoint.txt");
-        cir->fileOut(out);
-        cir3->fileOut(out);
+        cir->writeToFile(out);
+        cir3->writeToFile(out);
 
         Circle *cir2 = new Circle(-1, -2, -3);
         Circle *cir4 = new Circle(-4, -5, -6);
@@ -66,10 +66,10 @@ TEST_CASE("Checking the methods in the circle class", "[circle]")
         in.open("testPoint.txt");
         in >> tempClass;
         CHECK(tempClass == "Circle");
-        cir2->fileIn(in);
+        cir2->readFromFile(in);
         in >> tempClass;
         CHECK(tempClass == "Circle");
-        cir4->fileIn(in);
+        cir4->readFromFile(in);
 
         CHECK(cir2->getx() == 2);
         CHECK(cir2->gety() == 3);

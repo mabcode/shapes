@@ -5,7 +5,7 @@ ShapeGroup::ShapeGroup(std::string name)
     this->imgName = name;
 }
 
-void ShapeGroup::add(Image *img)
+void ShapeGroup::add(Shape *img)
 {
     imgPieces.push_back(img);
 }
@@ -15,7 +15,7 @@ void ShapeGroup::remove(int imgIndex)
     imgPieces.erase(imgPieces.begin()+(imgIndex-1));
 }
 
-Image *ShapeGroup::getImage(int imgIndex)
+Shape *ShapeGroup::getImage(int imgIndex)
 {
     return imgPieces.at(imgIndex);
 }
@@ -58,14 +58,14 @@ double ShapeGroup::area(void)
     return tempArea;
 }
 
-void ShapeGroup::fileOut(std::ofstream &out)
+void ShapeGroup::writeToFile(std::ofstream &out)
 {
     for (auto &iter : this->imgPieces)
     {
-        iter->fileOut(out);
+        iter->writeToFile(out);
     }
 }
-void ShapeGroup::fileIn(std::ifstream &in)
+void ShapeGroup::readFromFile(std::ifstream &in)
 {
     std::string tempClass;
 

@@ -32,8 +32,8 @@ catch_discover_tests(tests)
 add_executable(
 	shapes 
 	Main.cpp
-	Image.hpp
-	Image.cpp
+	Shape.hpp
+	Shape.cpp
 	Point.hpp
 	Point.cpp
 	Line.hpp

@@ -1,9 +1,9 @@
 #pragma once
-#include "Image.hpp"
+#include "Shape.hpp"
 
 #include <iostream>
 
-class Triangle : public Image
+class Triangle : public Shape
 {
   private:
     int x1, y1, x2, y2, x3, y3;
@@ -14,8 +14,8 @@ class Triangle : public Image
     void move(int x, int y);
     void scale(double scaleBy);
     double area(void);
-    void fileOut(std::ofstream &out);
-    void fileIn(std::ifstream &in);
+    void writeToFile(std::ofstream &out);
+    void readFromFile(std::ifstream &in);
     int getx1(void);
     int getx2(void);
     int getx3(void);

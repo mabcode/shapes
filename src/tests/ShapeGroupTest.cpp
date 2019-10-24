@@ -1,7 +1,7 @@
 #include <catch2/catch.hpp>
 
 #include "../ShapeGroup.cpp"
-#include "../Image.cpp"
+#include "../Shape.cpp"
 #include <fstream>
 
 TEST_CASE("Checking that Shape Group and composite", "[composite]")
@@ -20,13 +20,13 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
 
     SECTION("Checking composite move() on Point, Line, Circle, Triangle, Rectangle")
     {
-        Image *pointGroup = new ShapeGroup("point group");
-        Image *lineGroup = new ShapeGroup("line group");
-        Image *circleGroup = new ShapeGroup("circle group");
-        Image *rectangleGroup = new ShapeGroup("rectangle group");
-        Image *triangleGroup = new ShapeGroup("triangle group");
+        Shape *pointGroup = new ShapeGroup("point group");
+        Shape *lineGroup = new ShapeGroup("line group");
+        Shape *circleGroup = new ShapeGroup("circle group");
+        Shape *rectangleGroup = new ShapeGroup("rectangle group");
+        Shape *triangleGroup = new ShapeGroup("triangle group");
 
-        Image *allPointGroups = new ShapeGroup("allPoints");
+        Shape *allPointGroups = new ShapeGroup("allPoints");
 
         allPointGroups->add(pointGroup);
         pointGroup->add(new Point(1, 2));
@@ -127,13 +127,13 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
 
     SECTION("Checking composite scale() on Point, Line, Circle, Triangle, Rectangle")
     {
-        Image *pointGroup = new ShapeGroup("point group");
-        Image *lineGroup = new ShapeGroup("line group");
-        Image *circleGroup = new ShapeGroup("circle group");
-        Image *rectangleGroup = new ShapeGroup("rectangle group");
-        Image *triangleGroup = new ShapeGroup("triangle group");
+        Shape *pointGroup = new ShapeGroup("point group");
+        Shape *lineGroup = new ShapeGroup("line group");
+        Shape *circleGroup = new ShapeGroup("circle group");
+        Shape *rectangleGroup = new ShapeGroup("rectangle group");
+        Shape *triangleGroup = new ShapeGroup("triangle group");
 
-        Image *allPointGroups = new ShapeGroup("allPoints");
+        Shape *allPointGroups = new ShapeGroup("allPoints");
 
         allPointGroups->add(pointGroup);
         pointGroup->add(new Point(1, 2));
@@ -173,13 +173,13 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
 
     SECTION("Checking composite area() on Point, Line, Circle, Triangle, Rectangle")
     {
-        Image *pointGroup = new ShapeGroup("point group");
-        Image *lineGroup = new ShapeGroup("line group");
-        Image *circleGroup = new ShapeGroup("circle group");
-        Image *rectangleGroup = new ShapeGroup("rectangle group");
-        Image *triangleGroup = new ShapeGroup("triangle group");
+        Shape *pointGroup = new ShapeGroup("point group");
+        Shape *lineGroup = new ShapeGroup("line group");
+        Shape *circleGroup = new ShapeGroup("circle group");
+        Shape *rectangleGroup = new ShapeGroup("rectangle group");
+        Shape *triangleGroup = new ShapeGroup("triangle group");
 
-        Image *allPointGroups = new ShapeGroup("allPoints");
+        Shape *allPointGroups = new ShapeGroup("allPoints");
 
         allPointGroups->add(pointGroup);
         pointGroup->add(new Point(1, 2));
@@ -227,13 +227,13 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
 
     SECTION("Checking composite fileOut() and fileIn() on Point, Line, Circle, Triangle, Rectangle")
     {
-        Image *pointGroup = new ShapeGroup("point group");
-        Image *lineGroup = new ShapeGroup("line group");
-        Image *circleGroup = new ShapeGroup("circle group");
-        Image *rectangleGroup = new ShapeGroup("rectangle group");
-        Image *triangleGroup = new ShapeGroup("triangle group");
+        Shape *pointGroup = new ShapeGroup("point group");
+        Shape *lineGroup = new ShapeGroup("line group");
+        Shape *circleGroup = new ShapeGroup("circle group");
+        Shape *rectangleGroup = new ShapeGroup("rectangle group");
+        Shape *triangleGroup = new ShapeGroup("triangle group");
 
-        Image *allPointGroups = new ShapeGroup("allPoints");
+        Shape *allPointGroups = new ShapeGroup("allPoints");
 
         allPointGroups->add(pointGroup);
         pointGroup->add(new Point(1, 2));
@@ -252,17 +252,17 @@ TEST_CASE("Checking that Shape Group and composite", "[composite]")
 
         std::ofstream out;
         out.open("testComposite.txt");
-        allPointGroups->fileOut(out);
+        allPointGroups->writeToFile(out);
         out.close();
 
-        Image *allPointGroups2 = new ShapeGroup("allPoints2");
+        Shape *allPointGroups2 = new ShapeGroup("allPoints2");
         std::ifstream in;
         in.open("testComposite.txt");
-        allPointGroups2->fileIn(in);
+        allPointGroups2->readFromFile(in);
         in.close();
 
         out.open("testComposite2.txt");
-        allPointGroups2->fileOut(out);
+        allPointGroups2->writeToFile(out);
         out.close();
 
         auto temp1 = static_cast<Point *>(allPointGroups2->getImage(0));
